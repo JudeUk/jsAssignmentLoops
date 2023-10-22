@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Assignment Do while Loop</title>
+</head>
+<body>
+
+    <H3>Welcome Jude! You have some Queries to review</H3>
+
+    <table border="1" id="listTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Query</th>
+                <th>Student</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="queries-table"></tbody>
+    </table>
+
+
+
+
+<script lang="js">
+
+    const queries = [
+    {id: 1, student: "Genesis", query: "Permission to absent from tech class", status: "APPROVED"},
+    {id: 2, student: "Nunya", query: "Permission to Absa Hackathon", status: "APPROVED"},
+    {id: 3, student: "Fleeur", query: "Permission to shoot film", status: "DECLINED"},
+    {id: 4, student: "Delight", query: "Need some delightful time to cool off", status: "DECLINED"},
+    {id: 5, student: "Sila", query: "Permission to participate in Absa Hackathon", status: "PENDING"},
+    ]
+    
+    
+    
+    
+    function displayUl(){
+    
+    const table = document.getElementById('listTable');
+    
+    var i = 0;
+    
+    do{
+
+    const tableRow = document.createElement("tr");
+
+    const idColumn = document.createElement("td");
+
+    idColumn.textContent = queries[i].id;
+
+    const studentColumn = document.createElement("td");
+
+    studentColumn.textContent = queries[i].student;
+
+    const queryColumn = document.createElement("td");
+
+    queryColumn.textContent = queries[i].query;
+
+    const statusColumn = document.createElement("td");
+
+    statusColumn.textContent = queries[i].status;
+
+
+    const actionColumn = document.createElement("td");
+
+    const approveButton = document.createElement("button");
+    approveButton.textContent = "Approve";
+
+
+    const rejectButton = document.createElement("button");
+    rejectButton.textContent = "Reject";
+
+    actionColumn.appendChild(approveButton);
+    actionColumn.appendChild(rejectButton);
+    
+    tableRow.appendChild(idColumn);
+    tableRow.appendChild(queryColumn);
+    tableRow.appendChild(studentColumn); 
+    tableRow.appendChild(statusColumn);
+    tableRow.appendChild(actionColumn);
+
+
+
+    table.appendChild(tableRow);
+    
+        i ++;
+
+
+    }
+    while(i < queries.length);
+    
+    
+    }
+    
+    displayUl();
+    
+    </script>
+    
+</body>
+</html>
